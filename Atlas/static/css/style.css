@@ -1,0 +1,32 @@
+.logo{
+    color: #2E84E7 !important;
+}
+
+.active-col{
+    background-image: linear-gradient(to right, #2E7FE4, #1515AF);
+}
+body{
+    background-color: #F0F2F7;
+}
+#footer{
+    background-color: #dadde5;
+    position: absolute;
+    
+}
+#mypsp-table {
+    background-color: #AAD2FF;
+  }
+  
+  #my-tb-th {
+    background-color: #DEE2E6;
+  }
+  
+  #myTable tbody tr:nth-child(even),
+  #myTable2 tbody tr:nth-child(even) {
+    background-color: #3ECE2B;
+  }
+  
+  #myTable tbody tr:nth-child(odd),
+  #myTable2 tbody tr:nth-child(odd) {
+    background-color: #F9BD1F;
+  }

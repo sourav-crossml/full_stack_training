@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- icons -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+
+  <!-- datatable -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+  <script src="{% static 'jquery/jquery-1.11.0.min.js' %}"></script>
+  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+  <title>Task</title>
+  
+</head>
+
+<body>
+  <!-- First nav  -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container p-0">
+      <div class="container-fluid p-0">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-3 col-xl-3 col-xxl-3 text-muted p-0 mt-2">
+              <div class="row">
+                <div class="col-6">
+                  <a class="navbar-brand logo fw-bold ms-3 ms-md-0 ms-lg-0 ms-xl-0 ms-xxl-0" href="#">ATLAS</a>
+                </div>
+                <div class="col-6 text-end">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-0 col-lg-3 col-xl-3 col-xxl-3"></div>
+            <div class="col-0 col-lg-3 col-xl-3 col-xxl-3"></div>
+            <div class="col-12 col-lg-3 col-xl-3 col-xxl-3 text-muted p-0">
+              <div class="collapse navbar-collapse mt-2 mt-lg-0 mt-xl-0 mt-xxl-0" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                  <li class="nav-item dropdown border nav-item dropdown border me-2 mb-2">
+                    <a class="nav-link dropdown-toggle ms-2" href="#" id="navbarDropdown" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      STV
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown border mb-2">
+                    <a class="nav-link dropdown-toggle ms-2" href="#" id="navbarDropdown" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      Chad
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown border mb-2 d-lg-none d-xl-none d-xxl-none">
+                    <a class="nav-link text-decoration-none active-col text-white" href="/"><i
+                        class="ps-2 bi bi-activity"></i>
+                      DASHBOARD
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown border mb-2 d-lg-none d-xl-none d-xxl-none ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false"><i class=" ps-2 bi bi-person"></i>
+                      ACCOUNTS
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown border mb-2 d-lg-none d-xl-none d-xxl-none ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false"><i class="ps-2 bi bi-shuffle"></i>
+                      TRANSACTION
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="/datatable">Data Table</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown border mb-2 d-lg-none d-xl-none d-xxl-none ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false"><i class=" ps-2 bi bi-gear"></i>
+                      REPORTS
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown border mb-2 d-lg-none d-xl-none d-xxl-none ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false"><i class="ps-2 bi bi-file-earmark-text"></i>
+                      INVOICES
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown border mb-2 d-lg-none d-xl-none d-xxl-none ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false"><i class=" ps-2 bi bi-shuffle"></i>
+                      RECONCILIATION
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+  </nav>
+
+
+  
+  
+  <!-- end -->
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  {% include 'header2.html' %}
+ 
+
+</body>
+
+</html>
