@@ -1,0 +1,158 @@
+.first-div-txt {
+    padding-top: 20%;
+}
+
+.first-div-txt div p {
+    width: 28rem;
+}
+@media only screen and (max-width: 400px) {
+    .first-div-txt div p {
+        width: 12rem;
+    }
+}
+@media only screen and (max-width: 200px) {
+    .first-div-txt div p {
+        width: 6rem;
+    }
+}
+.first-div-txt div p span {
+    color: #3185E7;
+}
+
+.back {
+    background: url("../can.png");
+    height: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#card img {
+    height: 64px !important;
+    width: 64px !important;
+}
+
+#card {
+    width: 15rem !important;
+}
+
+.dif-color {
+    background-color: #3185E7;
+}
+
+.row-blue {
+    background-color: #3185E7;
+    height: 900px;
+}
+
+
+
+
+#how {
+    margin-left: 64%;
+}
+
+.example {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.backg {
+    background: url("../download.png");
+    height: 900px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backgu {
+    background: black;
+    z-index: 1;
+    height: 900px;
+    opacity: .8;
+}
+
+#why {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 2000%;
+    margin-left: 3%;
+
+}
+
+@media only screen and (max-width: 500px) {
+    #why {
+        font-size: 15rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #why {
+        font-size: 10rem;
+    }
+}
+
+@media only screen and (max-width: 250px) {
+    #why {
+        font-size: 5rem;
+    }
+}
+
+
+#how {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 2000%;
+    margin-left: 3%;
+
+}
+
+@media only screen and (max-width: 500px) {
+    #how {
+        font-size: 15rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #how {
+        font-size: 10rem;
+    }
+}
+
+@media only screen and (max-width: 250px) {
+    #how {
+        font-size: 5rem;
+    }
+}
+
+.blue-no {
+    font-size: 10rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .blue-no {
+        padding-top: 10% !important;
+        font-size: 5rem;
+    }
+}
+@media only screen and (max-width: 300px) {
+    .blue-no {
+        padding-top: 10% !important;
+        font-size: 2rem;
+    }
+}
+@media only screen  and (min-width:1200px)and (max-width: 1400px) {
+    .blue-no {
+        padding-top: 10% ;
+        font-size: 8rem;
+    }
+}
+@media only screen  and (min-width:1000px)and (max-width: 1200px) {
+    .blue-no {
+        padding-top: 10% ;
+        font-size: 6rem;
+    }
+}
+
+#Feedback {
+    height: 300px;
+}
