@@ -108,9 +108,10 @@
         </div>
     </div>
     <div class="table-secondary row w-50 position-absolute end-0  mx-5 px-5">
-        <p class="input-group-text mx-5 fs-6 px-5" id="">Debit Diff <span class="fw-bold mx-2 fw-bold" id="selected"></span> Credit
-            diff <span class=" mx-2  fw-bold" id="selected2"></span> total diff <span
-                class=" mx-2 fw-bold" id="selected3"></span></p>
+        <p class="input-group-text mx-5 fs-6 px-5" id="">Debit Diff <span class="fw-bold mx-2 fw-bold"
+                id="selected"></span> Credit
+            diff <span class=" mx-2  fw-bold" id="selected2"></span> total diff <span class=" mx-2 fw-bold"
+                id="selected3"></span></p>
 
     </div>
 
@@ -119,139 +120,146 @@
     ​
     <hr class="border-bold mt-4">
 
-    <div class="container pt-4 pb-4 p-0 fw-bold ">
-        <b class="logo">| </b> GENERAL JOURNAL
-        <div class="container float-end col-2">
-            <select class="form-select rounded-0 mb-2 text-muted" aria-label="Default select example">
-                <option selected value="0">USD</option>
-                <option selected value="0">USD2</option>
-                <option selected value="0">USD3</option>
-                <option selected value="0">USD4</option>
-            </select>
+    <div>
+        <div class="container pt-4 pb-4 p-0 fw-bold ">
+            <b class="logo">| </b> GENERAL JOURNAL
+            <div class="container float-end col-2">
+                <select class="form-select rounded-0 mb-2 text-muted" aria-label="Default select example">
+                    <option selected value="0">USD</option>
+                    <option selected value="0">USD2</option>
+                    <option selected value="0">USD3</option>
+                    <option selected value="0">USD4</option>
+                </select>
+            </div>
         </div>
-    </div>
-    ​
-    <div class="container bg-light border p-5 bg-white">
         ​
-        <div class="text-end py-2">
-            <a href="./table.html"><button type="button" class="btn btn-secondary">Table</button></a>
-        </div>
-        <form action="">
-            <div class="row align-items-center mb-0 mb-md-4 mb-lg-4">
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                    <label class="form-text mb-2">Template Name</label>
-                    <input type="text" id="inputtemplate" class="form-control rounded-0" value="567587987"
-                        aria-describedby="templatedHelpInline">
-                </div>
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                    <div class="row">
-                        <div class="col-6">
-                            <label class="form-text mb-2">Currency</label>
-                            <select class="form-select rounded-0 mb-2 text-muted" aria-label="Default select example">
-                                <option selected value="0">USD</option>
-                                <option selected value="0">USD2</option>
-                                <option selected value="0">USD3</option>
-                                <option selected value="0">USD4</option>
-                            </select>
+        <div class="container bg-light border p-5 bg-white">
+            ​
+            <div class="text-end py-2">
+                <a href="./table.html"><button type="button" class="btn btn-secondary">Table</button></a>
+            </div>
+            <form action="">
+                <div class="row align-items-center mb-0 mb-md-4 mb-lg-4">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                        <label class="form-text mb-2">Template Name</label>
+                        <input type="text" id="inputtemplate" class="form-control rounded-0" value="567587987"
+                            aria-describedby="templatedHelpInline">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="form-text mb-2">Currency</label>
+                                <select class="form-select rounded-0 mb-2 text-muted" aria-label="Default select example">
+                                    <option selected value="0">USD</option>
+                                    <option selected value="0">USD2</option>
+                                    <option selected value="0">USD3</option>
+                                    <option selected value="0">USD4</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-text mb-2">AUD Conversion</label>
+                                <input type="email" id="inputPassword6" class="form-control rounded-0" value="1.35890000"
+                                    aria-describedby="passwordHelpInline">
+                            </div>
                         </div>
-                        <div class="col-6">
-                            <label class="form-text mb-2">AUD Conversion</label>
-                            <input type="email" id="inputPassword6" class="form-control rounded-0" value="1.35890000"
-                                aria-describedby="passwordHelpInline">
+                    </div>
+                </div>
+                <div class="row g-3 pb-5">
+                    <div class="col-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <label for="inputdate" class="form-label text-muted">Transaction Date <span
+                                class="text-danger">*</span></label>
+                        <input type="date" class="form-control rounded-0" placeholder="" aria-label="">
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <label for="inputnumber" class="form-label text-muted">Reference Number:<span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control rounded-0" placeholder="" aria-label="">
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <label for="tranumber" class="form-label text-muted">Transaction number:</label>
+                        <input type="text" class="form-control rounded-0" placeholder="" aria-label="">
+                    </div>
+                </div>
+    
+    
+                <div class="table-responsive mt-5 ">
+                    <table id="mytable" class="table table-bordered ">
+                        <thead class="table-secondary">
+    
+                            <th class="text-decoration-none col-2">
+                                ACCOUNT
+                            </th>
+                            <th>DEBIT</th>
+                            <th>CREDIT</th>
+                            <th>QUANTITY</th>
+                            <th>DESCRIPTION</th>
+    
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="">
+                                        <select onclick="my()" class="form-select rounded-0 mb-2 text-muted" id="add-row"
+                                            aria-label="Default select example">
+                                            <option selected>Select Account...</option>
+                                            <option value="1-11200-Payroll Cheque Account(AUD)">1-11200-Payroll Cheque
+                                                Account(AUD)</option>
+                                            <option id="" value="1-11400-Petty Cash(AUD)">1-11400-Petty Cash(AUD)
+                                            </option>
+                                            <option id="" value="1-11300-Cash Drawer(AUD)">1-11300-Cash Drawer(AUD)
+                                            </option>
+                                            <option id="" value="1-11500-Clearing A/c(AUD)">1-11500-Clearing A/c(AUD)
+                                            </option>
+                                            <option id="" value="1-11800-Undeposited Funds(AUD)">1-11800-Undeposited
+                                                Funds(AUD
+                                            </option>
+                                        </select>
+    
+                                    </div>
+                                </td>
+                                <td id="" class=""><input class="form-control " type="text" placeholder="Default input"
+                                        aria-label="default input example"></td>
+                                <td><input class="form-control " type="text" placeholder="Default input"
+                                        aria-label="default input example"></td>
+                                <td><input class="form-control " type="text" placeholder="Default input"
+                                        aria-label="default input example"></td>
+                                <td><input class="form-control " type="text" placeholder="Default input"
+                                        aria-label="default input example"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+    
+                </div>
+                <div class="container-fluid row row-cols-2">
+                    <div class="form-floating col-3">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                            style="height: 100px"></textarea>
+                        <label for="floatingTextarea2" class="px-5">Genreal Commnet...</label>
+                    </div>
+    
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <div class="input-group ">
+                            <span class="">TOTAL DEBIT</span>
+                            <span type="text" aria-label="Last name" id="selecte" class=" mx-auto col-2"></span>
+                        </div>
+                        <div class="input-group ">
+                            <span class="">TOTAL CREDIT</span>
+                            <span type="text" aria-label="Last name" class=" mx-auto col-2"></span>
+                        </div>
+                        <div class="input-group ">
+                            <span class="">OUT OF BALANCE</span>
+                            <span type="text" aria-label="Last name" class=" mx-auto col-2"></span>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row g-3 pb-5">
-                <div class="col-12 col-lg-4 col-xl-4 col-xxl-4">
-                    <label for="inputdate" class="form-label text-muted">Transaction Date <span
-                            class="text-danger">*</span></label>
-                    <input type="date" class="form-control rounded-0" placeholder="" aria-label="">
+                <div class="my-3 mx-3">
+                    <button type="button" class="mx-2 btn btn-primary">Submit</button>
+                    <button type="button" class="mx-2 btn btn-secondary">Cancel</button>
+                    <button type="button" class="mx-2 btn btn-secondary">Save Template</button>
                 </div>
-                <div class="col-12 col-lg-4 col-xl-4 col-xxl-4">
-                    <label for="inputnumber" class="form-label text-muted">Reference Number:<span
-                            class="text-danger">*</span></label>
-                    <input type="text" class="form-control rounded-0" placeholder="" aria-label="">
-                </div>
-                <div class="col-12 col-lg-4 col-xl-4 col-xxl-4">
-                    <label for="tranumber" class="form-label text-muted">Transaction number:</label>
-                    <input type="text" class="form-control rounded-0" placeholder="" aria-label="">
-                </div>
-            </div>
-
-
-            <div class="table-responsive mt-5 ">
-                <table id="mytable" class="table table-bordered ">
-                    <thead class="table-secondary">
-
-                        <th class="text-decoration-none col-2">
-                            ACCOUNT
-                        </th>
-                        <th>DEBIT</th>
-                        <th>CREDIT</th>
-                        <th>QUANTITY</th>
-                        <th>DESCRIPTION</th>
-
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="">
-                                    <select onclick="my()" class="form-select rounded-0 mb-2 text-muted" id="add-row"
-                                        aria-label="Default select example">
-                                        <option selected>Select Account...</option>
-                                        <option value="1-11200-Payroll Cheque Account(AUD)">1-11200-Payroll Cheque
-                                            Account(AUD)</option>
-                                        <option id="" value="1-11400-Petty Cash(AUD)">1-11400-Petty Cash(AUD)
-                                        </option>
-                                        <option id="" value="1-11300-Cash Drawer(AUD)">1-11300-Cash Drawer(AUD)
-                                        </option>
-                                        <option id="" value="1-11500-Clearing A/c(AUD)">1-11500-Clearing A/c(AUD)
-                                        </option>
-                                        <option id="" value="1-11800-Undeposited Funds(AUD)">1-11800-Undeposited
-                                            Funds(AUD
-                                        </option>
-                                    </select>
-
-                                </div>
-                            </td>
-                            <td id="" class=""><input class="form-control " type="text" placeholder="Default input"
-                                    aria-label="default input example"></td>
-                            <td><input class="form-control " type="text" placeholder="Default input"
-                                    aria-label="default input example"></td>
-                            <td><input class="form-control " type="text" placeholder="Default input"
-                                    aria-label="default input example"></td>
-                            <td><input class="form-control " type="text" placeholder="Default input"
-                                    aria-label="default input example"></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
-            <div class="container-fluid row row-cols-2">
-                <div class="form-floating col-3">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                        style="height: 100px"></textarea>
-                    <label for="floatingTextarea2" class="px-5">Genreal Commnet...</label>
-                </div>
-
-                <div class="col-3"></div>
-                <div class="col-6">
-                    <div class="input-group ">
-                        <span class="">TOTAL DEBIT</span>
-                        <span type="text" aria-label="Last name" id="selecte" class=" mx-auto col-2"></span>
-                    </div>
-                    <div class="input-group ">
-                        <span class="">TOTAL CREDIT</span>
-                        <span type="text" aria-label="Last name" class=" mx-auto col-2"></span>
-                    </div>
-                    <div class="input-group ">
-                        <span class="">OUT OF BALANCE</span>
-                        <span type="text" aria-label="Last name" class=" mx-auto col-2"></span>
-                    </div>
-                </div>
-            </div>
+    </div>
             <!-- Optional JavaScript; choose one of the two! -->
 
             <!-- Option 1: Bootstrap Bundle with Popper -->
