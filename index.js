@@ -13,13 +13,13 @@ checkboxes.forEach((check, index) => {
             var table = document.getElementById("table1");
             sumVal1 = sumVal1 + parseInt(table.rows[index + 1].cells[2].innerHTML);
             sumVal2 = sumVal2 + parseInt(table.rows[index + 1].cells[3].innerHTML);
-            first()
+            credit_debit_sum()
         }
         else if (this.checked != true) {
             var table = document.getElementById("table1");
             sumVal1 = sumVal1 - parseInt(table.rows[index + 1].cells[2].innerHTML);
             sumVal2 = sumVal2 - parseInt(table.rows[index + 1].cells[3].innerHTML);
-            first()
+            credit_debit_sum()
         }
         else {
             sumval1 = 0;
@@ -43,13 +43,13 @@ checkboxes.forEach((check, index) => {
             var table = document.getElementById("table2");
             sumVal3 = sumVal3 + parseInt(table.rows[index + 1].cells[2].innerHTML);
             sumVal4 = sumVal4 + parseInt(table.rows[index + 1].cells[3].innerHTML);
-            first()
+            credit_debit_sum()
         }
         else if (this.checked != true) {
             var table = document.getElementById("table2");
             sumVal3 = sumVal3 - parseInt(table.rows[index + 1].cells[2].innerHTML);
             sumVal4 = sumVal4 - parseInt(table.rows[index + 1].cells[3].innerHTML);
-            first()
+            credit_debit_sum()
         }
         else {
             sumVal2 = 0;
@@ -58,15 +58,21 @@ checkboxes.forEach((check, index) => {
     })
 })
 
-function first() {
+function credit_debit_sum() {
     a = sumVal1 - sumVal3;
     b = sumVal2 - sumVal4
     document.getElementById('selected').innerHTML = a;
     document.getElementById('selected2').innerHTML = b;
+    total_diff(a,b)
 }
 
 
-
+function total_diff() {
+    debit=a;
+    credit=b;
+    total = debit-credit;
+    document.getElementById('selected3').innerHTML=total;
+}
 
 
 // task 2
