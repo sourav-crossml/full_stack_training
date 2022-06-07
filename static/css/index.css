@@ -1,0 +1,16 @@
+
+.navbar-nav :hover{
+    color: green !important;
+}
+.left{
+    background-image: url(../../13.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: .5;
+}
+.right{
+    background-image: url(../../banner-2.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-y: -2%;
+}
