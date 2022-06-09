@@ -1,24 +1,25 @@
-
-.navbar-nav :hover{
+.navbar-nav :hover {
     color: green !important;
 }
-.left{
+
+.left {
     background-image: url(../images/13.png);
     background-repeat: no-repeat;
     background-size: contain;
     opacity: .5;
 }
-.right{
+
+.right {
     background-image: url(../images/banner-2.png);
     background-repeat: no-repeat;
     background-position: right;
     background-position-y: -2%;
 }
 
-.exp-more{
+.exp-more {
     margin-top: -3%;
 }
 
-back-div.{
-    
+.back-div {
+    background-color: #7D60D4;
 }
