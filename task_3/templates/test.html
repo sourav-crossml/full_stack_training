@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid pt-2 pb-4 p-0 fw-bold px-5 ">
+        <div class="container-fluid bg-light border bg-white">
+            <div class="row">
+                <div class="text-end pt-2">
+                    <a href="#"><button type="button" class="btn btn-secondary">Form</button></a>
+                </div>
+                <div class="col p-5">
+                    <div class="row mt-4 table-responsive">
+                        <table id="table1" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Transaction</th>
+                                    <th>DEBIT</th>
+                                    <th>CREDIT</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="checkboxt1">
+                                    <td><input type="checkbox" id="vehicle1" class="checkbox1"></td>
+                                    <td>a2vb3g232</td>
+                                    <td>234453234</td>
+                                    <td>2324332344</td>
+                                </tr>
+                                <tr class="checkboxt1">
+                                    <td><input type="checkbox" id="vehicle1" class="checkbox1"></td>
+                                    <td>a2vb3g232</td>
+                                    <td>34656</td>
+                                    <td>89864</td>
+                                </tr>
+                                <tr class="checkboxt1">
+                                    <td><input type="checkbox" id="vehicle1" class="checkbox1"></td>
+                                    <td>a2dfdf</td>
+                                    <td>575765367</td>
+                                    <td>3467</td>
+                                </tr>
+                                <tr class="checkboxt1">
+                                    <td><input type="checkbox" id="vehicle3" class="checkbox1"></td>
+                                    <td>a2vtyt77</td>
+                                    <td>45566</td>
+                                    <td>342342</td>
+                                </tr>
+                                <tr class="checkboxt1">
+                                    <td><input type="checkbox" id="vehicle1" class="checkbox1"></td>
+                                    <td>a2vb3g232</td>
+                                    <td>234453234</td>
+                                    <td>2324332344</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="col p-5">
+                    <div class="row mt-4 table-responsive">
+                        <table id="table2" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Transaction</th>
+                                    <th>DEBIT</th>
+                                    <th>CREDIT</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="checkboxt2">
+                                    <td><input type="checkbox" id="vehicle1" class="checkbox2"></td>
+                                    <td>a2vb3g232</td>
+                                    <td>234453234</td>
+                                    <td>2324332344</td>
+                                </tr>
+                                <tr class="checkboxt2">
+                                    <td><input type="checkbox" id="vehicle1" class="checkbox2"></td>
+                                    <td>a2dsdfdf</td>
+                                    <td>57323224567</td>
+                                    <td>2323</td>
+                                </tr>
+                                <tr class="checkboxt2">
+                                    <td><input type="checkbox" id="vehicle1" class="checkbox2"></td>
+                                    <td>a2vtyt77</td>
+                                    <td>567567</td>
+                                    <td>232</td>
+                                </tr>
+                                <tr class="checkboxt2">
+                                    <td><input type="checkbox" id="vehicle1" class="checkbox2"></td>
+                                    <td>gh5645sdfgh</td>
+                                    <td>56541</td>
+                                    <td>452424</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-secondary row w-50 position-absolute end-0  mx-5 px-5">
+        <p class="input-group-text mx-5 fs-6 px-5" id="">Debit Diff <span class="fw-bold mx-2 fw-bold"
+                id="selected"></span> Credit
+            diff <span class=" mx-2  fw-bold" id="selected2"></span> total diff <span class=" mx-2 fw-bold"
+                id="selected3"></span></p>
+
+    </div>
+
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{% static 'js/test.js' %}"></script>
+</html>
