@@ -61,18 +61,43 @@ checkboxes.forEach((check, index) => {
 function credit_debit_sum() {
     a = sumVal1 - sumVal3;
     b = sumVal2 - sumVal4
-    document.getElementById('selected').innerHTML = a;
-    document.getElementById('selected2').innerHTML = b;
-    total_diff(a,b)
+    document.getElementById('selected').innerHTML = Math.abs(a);
+    document.getElementById('selected2').innerHTML = Math.abs(b);
+    total_diff(a, b)
 }
 
 
 function total_diff() {
-    debit=a;
-    credit=b;
-    total = debit-credit;
-    document.getElementById('selected3').innerHTML=total;
+    debit = a;
+    credit = b;
+    total = debit - credit;
+    document.getElementById('selected3').innerHTML = Math.abs(total);
 }
+
+
+
+var checkboxes1 = document.getElementsByClassName('checkboxt1');
+var checkboxes2 = document.getElementsByClassName('checkboxt2');
+
+function color_chnage() {
+    debugger
+    for (var i = 0; i < checkboxes1.length; i++) {
+        for (var j = 0; j < checkboxes2.length; j++) {
+           
+            if (checkboxes1[i].children[1].innerHTML == checkboxes2[j].children[1].innerHTML && checkboxes1[i].children[2].innerHTML == checkboxes2[j].children[2].innerHTML && checkboxes1[i].children[3].innerHTML == checkboxes2[j].children[3].innerHTML) {
+                checkboxes1[i].bgColor = "Yellow";
+                checkboxes2[j].bgColor = "Yellow";
+            }
+           
+        }
+    }
+}
+color_chnage()
+
+
+
+
+
 
 
 // task 2
