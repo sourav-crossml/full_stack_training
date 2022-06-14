@@ -2,5 +2,5 @@
 database = cde_database
 host = localhost
 user = root
-password = root
+password = 1234
 default-character-set = utf8
