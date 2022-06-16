@@ -1,7 +1,7 @@
 name: Create/update tag
 on:
-  pull:
-    branch: "main"
+  pull_request:
+    branches: "main"
 jobs:
   create-tag:
     runs-on: ubuntu-latest
