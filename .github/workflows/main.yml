@@ -1,13 +1,15 @@
-name: Create/update tag
+name: auto_tag
 on:
   pull_request:
-    branches: "main"
+    branches:
+      - main
 jobs:
-  create-tag:
+  tag_repo:
+    name: Get runner id and tag the current code snapshot
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: sourav-crossml/full_stack_training@v1
-        with:
-          tag: "latest@v0.0.1"
-          message: "Latest release"
+      - name: Tag and push current repo code
+        run: |
+          git tag ${{github.run_id}}
+          git push origin ${{github.run_id}}
