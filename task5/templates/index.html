@@ -1,0 +1,70 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+
+    <title>Hello, world!</title>
+</head>
+
+<body class="bg-light">
+    <select onchange="displayDivDemo('hideValuesOnSelect', this)">
+        <option value="0">Java</option>
+        <option value="1">Javascript</option>
+    </select>
+    <div id="hideValuesOnSelect">This is the Javascript</div>
+
+    <div class="container bg-white">
+        <div class=" card-header bg-white">
+            <p class="fs-4 ">CONFIGURE NEW PROCESS</p>
+        </div>
+        <div class="card-body py-5">
+            <button class="btn btn-primary float-end mb-3" type="submit">Create & Continue Next</button>
+            <button class="btn btn-primary float-end mb-3 mx-3" type="submit">Clear</button>
+            <button class="btn btn-primary float-end" type="submit">Cancel</button>
+
+        </div>
+       
+
+
+    </div>
+    <div class="container bg-white">
+        <div>
+
+            <ul class="nav flex-column ">
+                <li class="nav-item">
+                  <a class="nav-link active bg-primary text-decoration-none text-white w-25 rounded-pill text-center" aria-current="page" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+              </ul>
+
+        </div>
+    </div>
+
+
+
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>
