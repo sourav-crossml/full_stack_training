@@ -10,10 +10,6 @@ classification_model_select_options = (
     (1,'Engine-II')
 )
 
-
-
-
-
 # Create your models here.
 class NewProcess(models.Model):
     process_name = models.CharField(max_length=30)
