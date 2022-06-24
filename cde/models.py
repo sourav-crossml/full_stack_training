@@ -67,7 +67,7 @@ class NewProcess(models.Model):
     classification_model = models.CharField(
         max_length=30, choices=classification_model_select_options, null=True)
     input_document = MultiSelectField(
-        choices=input_document_select_options, null=True)
+        choices=input_document_select_options, null=True , max_choices=5)
     time_zone = models.CharField(
         max_length=30, choices=time_zone_select_options, null=True)
     process_sla = models.CharField(
