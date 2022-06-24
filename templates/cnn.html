@@ -19,8 +19,16 @@
 </head>
 
 <body class="bg-light">
-{{form}}
-
+<div class="container">
+  <form method="POST" action="add_cnn">
+    <fieldset>
+      <legend>Form</legend>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+  </form>
+</div>
 
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'js/index.js' %}"></script>
