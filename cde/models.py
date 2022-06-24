@@ -5,21 +5,21 @@ from multiselectfield import MultiSelectField
 from django.contrib.auth.models import User
 
 pipeline_select_options = (
-    (0, 'Engine-I'),
-    (1, 'Engine-II'),
+    ('Engine-I', 'Engine-I'),
+    ('Engine-II', 'Engine-II'),
 )
 
 classification_model_select_options = (
-    (0, 'Engine-I'),
-    (1, 'Engine-II'),
+    ('yes', 'yes'),
+    ('no', 'no'),
 )
 
 input_document_select_options = (
-    (0, 'JPG'),
-    (1, 'PDF'),
-    (2, 'JPEG'),
-    (3, 'TIF'),
-    (4, 'PNG'),
+    ('JPG', 'JPG'),
+    ('PDF', 'PDF'),
+    ('JPEG', 'JPEG'),
+    ('TIF', 'TIF'),
+    ('PNG', 'PNG'),
 )
 time_zone_select_options = (
     (0, '(UTC-12:00)Universal Coordinated Time GMT '),
@@ -63,15 +63,16 @@ pre_processing_select_options = (
 
 class NewProcess(models.Model):
     process_name = models.CharField(max_length=30)
-    pipeline = models.CharField(max_length=1, choices=pipeline_select_options)
-    classication_model = models.CharField(
-        max_length=1, choices=classification_model_select_options)
+    pipeline = models.CharField(max_length=30, choices=pipeline_select_options, null=True)
+    classification_model = models.CharField(
+        max_length=30, choices=classification_model_select_options, null=True)
     input_document = MultiSelectField(
-        choices=input_document_select_options)
+        choices=input_document_select_options, null=True)
     time_zone = models.CharField(
-        max_length=1, choices=time_zone_select_options)
+        max_length=30, choices=time_zone_select_options, null=True)
     process_sla = models.CharField(
-        max_length=1, choices=process_sla_select_options)
+        max_length=30, choices=process_sla_select_options, null=True)
     pre_processing = models.CharField(
-        max_length=1, choices=pre_processing_select_options)
-    username= models.ForeignKey(User, to_field="username",on_delete=models.CASCADE)
+        max_length=30, choices=pre_processing_select_options, null=True)
+    # username = models.ForeignKey(
+    #     User, to_field="username", on_delete=models.CASCADE,null=True)
