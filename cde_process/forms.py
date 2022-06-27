@@ -14,5 +14,5 @@ class AddCnnForm(forms.ModelForm):
 
     class Meta:
         model = AddCnn
-        fields = '__all__'
+        exclude = ["sample_file"]
         # fields = ('process_name', 'pipeline', 'classification_model', 'input_document', 'time_zone','process_sla','pre_processing')
