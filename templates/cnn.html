@@ -1,4 +1,6 @@
 {% load static %}
+{% load widget_tweaks %}
+
 
 <!doctype html>
 <html lang="en">
@@ -79,10 +81,10 @@
             <div class="" id="">
               <ul class="navbar-nav">
                 <li class="nav-item text-center border-0 mb-2">
-                  <a class="nav-link text-dark bg-light p-2" aria-current="page " href="#">CONFIGURE PROCESS</a>
+                  <a class="nav-link text-dark bg-light p-2" aria-current="page " href="/">CONFIGURE PROCESS</a>
                 </li>
                 <li class="nav-item text-center border-0 mb-2" id="hideValuesOnSelect">
-                  <a class="nav-link text-dark bg-light p-2" aria-current="page" href="#">CNN MODEL</a>
+                  <a class="nav-link text-dark bg-light p-2" aria-current="page" href="cnn_view">CNN MODEL</a>
                 </li>
                 <li class="nav-item text-center border-0 mb-2">
                   <a class="nav-link text-dark bg-light p-2" aria-current="page" href="#">MANAGE ATTRIBUTES</a>
@@ -103,18 +105,13 @@
                 <div class="mb-3 row col-12">
                   <label for="staticEmail" class="col-4 col-form-label">Type</label>
                   <div class="col-8">
-                    {{form.type}}
-                  </div>
-                </div>
-                <div class="mb-3 row col-12 display-none">
-                  <label for="staticEmail" class="col-4 col-form-label">Type</label>
-                  <div class="col-8">
-                    {{user}}
+                    {% render_field form.type class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12">
                   <label for="staticEmail" class="col-sm-4 col-form-label">Name</label>
                   <div class="col-sm-8">
+                    
                     {{form.name}}
                   </div>
                 </div>
@@ -127,8 +124,7 @@
                 <div class="checkbox">
                   <label for="documents" class="">Sample file:</label>
                   {{form.sample_file}}
-                  <input type="file" name="sample_file">
-
+                  <input class="form-control" type="file" id="formFile" name="sample_file">
                 </div>
 
               </div>
@@ -136,37 +132,36 @@
                 <div class="mb-3 row col-sm-12">
                   <label for="staticEmail" class="col-sm-4 col-form-label">Epochs</label>
                   <div class="col-sm-8">
-                    {{form.epochs}}
-
+                    {% render_field form.epochs class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12">
                   <label for="staticEmail" class="col-sm-4 col-form-label">Batch Size</label>
                   <div class="col-sm-8">
-                    {{form.batch_size}}
+                    {% render_field form.batch_size class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12">
                   <label for="staticEmail" class="col-sm-4 col-form-label">Kernal Initializer</label>
                   <div class="col-sm-8">
-                    {{form.kernal_initializer}}
+                    {% render_field form.kernal_initializer class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12">
                   <label for="staticEmail" class="col-sm-4 col-form-label">Optimizer</label>
                   <div class="col-sm-8">
-                    {{form.optimizer}}
+                    {% render_field form.optimizer class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                 </div>
-                <div class="mb-3 row col-sm-12">
+                <div class="mb-3 row col-sm-12 form-group">
                   <label for="staticEmail" class="col-sm-4 col-form-label">Test Size</label>
                   <div class="col-sm-8">
-                    {{form.test_size}}
+                    {% render_field form.test_size class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
-                  <div class="mb-3 row col-sm-12">
+                  <div class="mb-3 mt-3 row col-sm-12 form-group">
                     <label for="staticEmail" class="col-sm-4 col-form-label">Activation</label>
                     <div class="col-sm-8">
-                      {{form.activation}}
+                      {% render_field form.activation class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                     </div>
                   </div>
                 </div>

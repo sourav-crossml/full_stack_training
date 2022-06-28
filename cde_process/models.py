@@ -2,6 +2,7 @@ from django.db import models
 from multiselectfield import MultiSelectField
 from django.contrib.auth.models import User
 
+
 pipeline_select_options = (
     ('Engine-I', 'Engine-I'),
     ('Engine-II', 'Engine-II'),
@@ -262,7 +263,6 @@ activation_select_option = (
 )
 
 class AddCnn(models.Model):
-    process_id = models.ForeignKey(NewProcess, on_delete=models.CASCADE,null=True)
     type = models.CharField(max_length=30, choices=type_select_option)
     name = models.CharField(max_length=30,)
     confidence_threshold = models.IntegerField(max_length=30,)

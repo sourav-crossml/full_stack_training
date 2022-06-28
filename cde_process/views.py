@@ -11,33 +11,33 @@ def index(request):
     return render(request, "index.html", context={'newprocessform': newprocessform})
 
 
-def cnn_view(request, user):
-    print(user)
+def cnn_view(request, ):
     add_cnn = AddCnnForm()
     table_values = AddCnn.objects.all()
     return render(request, "cnn.html", context={'form': add_cnn, 'data': table_values})
 
 
 def new_process(request):
-    form = NewProcessForm()
-    if request.method == "POST":
-        form = NewProcessForm(request.POST)
-        if form.is_valid():
-            form.save()
-            userName = request.REQUEST.get('username', None)
-            userPass = request.REQUEST.get('password', None)
-            userMail = request.REQUEST.get('email', None)
-            if userName and userPass and userMail:
-                u,created = User.objects.get_or_create(userName, userMail)
-        
+    if request.method == 'POST':
+        firstname = request.POST.get('firstname')
+        lastname = request.POST.get('lastname')
+        username = request.POST.get('email')
+        password = request.POST.get('password')
+        confirmpassword = request.POST.get('confirmpassword')
+        if password==confirmpassword:
+            user = User.objects.create_user(first_name=firstname, last_name=lastname,username=username,password=password)
+            form = NewProcessForm()
+            if request.method == "POST":
+                form = NewProcessForm(request.POST)
+                if form.is_valid():
+                        form.save()
+        else:
+            return redirect(index)
 
     if request.POST.get('classification_model') == 'yes':
-        user = request.POST.get('process_name')
-        id=form.object.only('id').get(name='process_name').id
-        print(id)
         add_cnn = AddCnnForm()
         table_values = AddCnn.objects.all()
-        return render(request, "cnn.html", context={'form': add_cnn, 'data': table_values,'user':user})
+        return render(request, "cnn.html", context={'form': add_cnn, 'data': table_values})
 
         # return redirect(cnn_view,{'user':user})
     else:
@@ -49,7 +49,7 @@ def add_cnn(request):
     if request.method == "POST" and request.FILES['sample_file']:
         form = AddCnnForm(request.POST)
         if form.is_valid():
-            my_model =form.save(commit=False)
+            my_model = form.save(commit=False)
             my_model.sample_file = request.FILES['sample_file']
             my_model.save()
     else:
@@ -64,7 +64,7 @@ def add_cnn(request):
 #         form = Cnn_modelForm(request.POST)
 #         # breakpoint()
 #         if form.is_valid():
-            
+
 #             my_model = form.save(commit=False)
 #             my_model.sample_file = request.FILES['sample_file']
 #             my_model.cnnclass = "Single_Class value"
