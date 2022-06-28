@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
-from .forms import NewProcessForm, AddCnnForm
-from .models import NewProcess, AddCnn
+from .forms import NewProcessForm, AddCnnForm ,ManageAttributeForm
+from .models import NewProcess, AddCnn ,ManageAttribute
 from django.contrib.auth.models import User
 # Create your views here.
 
@@ -15,6 +15,12 @@ def cnn_view(request, ):
     add_cnn = AddCnnForm()
     table_values = AddCnn.objects.all()
     return render(request, "cnn.html", context={'form': add_cnn, 'data': table_values})
+
+
+def mamange_attribute_view(request, ):
+    add_cnn = ManageAttributeForm()
+    table_values = ManageAttribute.objects.all()
+    return render(request, "manage_attribute.html", context={'form': add_cnn, 'data': table_values})
 
 
 def new_process(request):

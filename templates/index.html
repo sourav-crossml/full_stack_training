@@ -104,26 +104,26 @@
               <div class="">
 
                 <div class="mb-3 row col-12">
-                  <label for="staticEmail" class="col-4 col-form-label">Process Name</label>
+                  <label for="staticEmail" class="col-4 col-form-label">Process Name<span class="star">*</span></label>
                   <div class="col-8">
                     {{newprocessform.process_name}}
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12">
-                  <label for="staticEmail" class="col-sm-4 col-form-label">Pipeline</label>
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Pipeline<span class="star">*</span></label>
                   <div class="col-sm-8">
                     {% render_field newprocessform.pipeline class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                     <!-- {{newprocessform.pipeline}} -->
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12">
-                  <label for="staticEmail" class="col-sm-4 col-form-label">Classification Model</label>
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Classification Model<span class="star">*</span></label>
                   <div class="col-sm-8">
                     {% render_field newprocessform.classification_model class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                 </div>
                 <div class="d-flex flex-row">
-                  <label for="documents" class="">Input documents:</label>
+                  <label for="documents" class="">Input documents<span class="star">*</span></label>
                   {% render_field newprocessform.input_document class=" d-flex justify-content-center px-5 mx-3 list-unstyled  flex-row text" id='' aria-label="" name="classification_model" %}
                   <!-- {{newprocessform.input_document}} -->
                 </div>
@@ -131,19 +131,19 @@
               </div>
               <div class="col">
                 <div class="mb-3 row col-sm-12">
-                  <label for="staticEmail" class="col-sm-4 col-form-label">Time Zone</label>
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Time Zone<span class="star">*</span></label>
                   <div class="col-sm-8">
                     {% render_field newprocessform.time_zone class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12">
-                  <label for="staticEmail" class="col-sm-4 col-form-label">Process SLA</label>
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Process SLA<span class="star">*</span></label>
                   <div class="col-sm-8">
                     {% render_field newprocessform.process_sla class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12">
-                  <label for="staticEmail" class="col-sm-4 col-form-label">Pre Processing</label>
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Pre Processing<span class="star">*</span></label>
                   <div class="col-sm-8">
                     {% render_field newprocessform.pre_processing class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
@@ -156,7 +156,7 @@
               <div class="col">
                 <div class="col-12">
                   <div class="mb-3 row col-sm-12">
-                    <label for="staticEmail" class="col-sm-4 col-form-label">User ID</label>
+                    <label for="staticEmail" class="col-sm-4 col-form-label">User ID<span class="star">*</span></label>
                     <div class="col-sm-8">
                       <select class="form-select" aria-label="Default select example" name="">
                         <option selected>Create New User</option>
@@ -166,13 +166,13 @@
                   </div>
                 </div>
                 <div class="mb-3 row col-12">
-                  <label for="staticEmail" class="col-4 col-form-label">Firstname</label>
+                  <label for="staticEmail" class="col-4 col-form-label">Firstname<span class="star">*</span></label>
                   <div class="col-8">
                     <input type="text" class="form-control" name="firstname" id="Firstname" placeholder="">
                   </div>
                 </div>
                 <div class="mb-3 row col-12">
-                  <label for="staticEmail" class="col-4 col-form-label">Email id</label>
+                  <label for="staticEmail" class="col-4 col-form-label">Email id<span class="star">*</span></label>
                   <div class="col-8">
                     <input type="email" class="form-control" name="email" id="Email_id" placeholder="">
                   </div>
@@ -194,13 +194,13 @@
                     </div>
                   </div>
                   <div class="mb-3 row col-12">
-                    <label for="staticEmail" class="col-4 col-form-label">Lastname</label>
+                    <label for="staticEmail" class="col-4 col-form-label">Lastname<span class="star">*</span></label>
                     <div class="col-8">
                       <input type="text" class="form-control" name="lastname" id="Lastname" placeholder="">
                     </div>
                   </div>
                   <div class="mb-3 row col-sm-12">
-                    <label for="staticEmail" class="col-sm-4 col-form-label">User Type</label>
+                    <label for="staticEmail" class="col-sm-4 col-form-label">User Type<span class="star">*</span></label>
                     <div class="col-sm-8">
                       <select class="form-select" name="usertype" aria-label="Default select example">
                         <option selected value="3">Client</option>
@@ -208,7 +208,7 @@
                     </div>
                   </div>
                   <div class="mb-3 row col-12">
-                    <label for="staticEmail" class="col-4 col-form-label">Confirm Password</label>
+                    <label for="staticEmail" class="col-4 col-form-label">Confirm Password<span class="star">*</span></label>
                     <div class="col-8">
                       <input type="password" class="form-control" name="confirmpassword" id="Confirm_Password" placeholder="">
                     </div>

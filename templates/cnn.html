@@ -66,7 +66,7 @@
 
   <div class="container border bg-white p-2 ">
     <div class="border-bottom">
-      <p class="fs-2 ">New Process</p>
+      <p class="fs-2 ">CNN MODEL</p>
     </div>
     <div class="container">
       <form method="POST" action="add_cnn" enctype="multipart/form-data">
@@ -103,63 +103,63 @@
               <div class="">
 
                 <div class="mb-3 row col-12">
-                  <label for="staticEmail" class="col-4 col-form-label">Type</label>
+                  <label for="staticEmail" class="col-4 col-form-label">Type<span class="star">*</span></label>
                   <div class="col-8">
                     {% render_field form.type class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12">
-                  <label for="staticEmail" class="col-sm-4 col-form-label">Name</label>
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Name<span class="star">*</span></label>
                   <div class="col-sm-8">
                     
                     {{form.name}}
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12">
-                  <label for="staticEmail" class="col-sm-4 col-form-label">Confidence Threshold :</label>
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Confidence Threshold<span class="star">*</span></label>
                   <div class="col-sm-8">
                     {{form.confidence_threshold}}
                   </div>
                 </div>
                 <div class="checkbox">
-                  <label for="documents" class="">Sample file:</label>
+                  <label for="documents" class="">Sample file<span class="star">*</span></label>
                   {{form.sample_file}}
-                  <input class="form-control" type="file" id="formFile" name="sample_file">
+                  <input class="form-control" type="file" accept=".zip" id="formFile" name="sample_file">
                 </div>
 
               </div>
               <div class="col">
                 <div class="mb-3 row col-sm-12">
-                  <label for="staticEmail" class="col-sm-4 col-form-label">Epochs</label>
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Epochs<span class="star">*</span></label>
                   <div class="col-sm-8">
                     {% render_field form.epochs class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12">
-                  <label for="staticEmail" class="col-sm-4 col-form-label">Batch Size</label>
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Batch Size<span class="star">*</span></label>
                   <div class="col-sm-8">
                     {% render_field form.batch_size class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12">
-                  <label for="staticEmail" class="col-sm-4 col-form-label">Kernal Initializer</label>
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Kernal Initializer<span class="star">*</span></label>
                   <div class="col-sm-8">
                     {% render_field form.kernal_initializer class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12">
-                  <label for="staticEmail" class="col-sm-4 col-form-label">Optimizer</label>
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Optimizer<span class="star">*</span></label>
                   <div class="col-sm-8">
                     {% render_field form.optimizer class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                 </div>
                 <div class="mb-3 row col-sm-12 form-group">
-                  <label for="staticEmail" class="col-sm-4 col-form-label">Test Size</label>
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Test Size<span class="star">*</span></label>
                   <div class="col-sm-8">
                     {% render_field form.test_size class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                   </div>
                   <div class="mb-3 mt-3 row col-sm-12 form-group">
-                    <label for="staticEmail" class="col-sm-4 col-form-label">Activation</label>
+                    <label for="staticEmail" class="col-sm-4 col-form-label">Activation<span class="star">*</span></label>
                     <div class="col-sm-8">
                       {% render_field form.activation class="form-control" id='exampleFormControlSelect1' aria-label="" name="classification_model" %}
                     </div>
@@ -175,43 +175,45 @@
             </div>
           </div>
       </form>
+      <div class="col-4"></div>
+      <div class="col-8 table-responsive">
+        <table id="myTable" class="display p-3 table table-bordered">
+          <thead class="bg-light">
+            <tr>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Confidence Threshold </th>
+              <th>Sample file</th>
+              <th>Epochs</th>
+              <th>Batch Size</th>
+              <th>Kernal Initializer</th>
+              <th>Optimizer</th>
+              <th>Test Size</th>
+              <th>Activation</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for values in data %}
+            <tr>
+              <td>{{values.type}}</td>
+              <td>{{values.name}}</td>
+              <td>{{values.confidence_threshold}}</td>
+              <td>{{values.sample_file}}</td>
+              <td>{{values.epochs}}</td>
+              <td>{{values.batch_size}}</td>
+              <td>{{values.kernal_initializer}}</td>
+              <td>{{values.optimizer}}</td>
+              <td>{{values.test_size}}</td>
+              <td>{{values.activation}}</td>
+              <td><input type="button" value="edit" onclick="myFunction(this)"></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </div>
-    <div class="col-12">
-      <table id="myTable" class="display table table-bordered">
-        <thead class="bg-light">
-          <tr>
-            <th>Type</th>
-            <th>Name</th>
-            <th>Confidence Threshold </th>
-            <th>Sample file:</th>
-            <th>Epochs</th>
-            <th>Batch Size</th>
-            <th>Kernal Initializer</th>
-            <th>Optimizer</th>
-            <th>Test Size</th>
-            <th>Activation</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for values in data %}
-          <tr>
-            <td>{{values.type}}</td>
-            <td>{{values.name}}</td>
-            <td>{{values.confidence_threshold}}</td>
-            <td>{{values.sample_file}}</td>
-            <td>{{values.epochs}}</td>
-            <td>{{values.batch_size}}</td>
-            <td>{{values.kernal_initializer}}</td>
-            <td>{{values.optimizer}}</td>
-            <td>{{values.test_size}}</td>
-            <td>{{values.activation}}</td>
-            <td><input type="button" value="edit" onclick="myFunction(this)"></td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
+    
   </div>
 
 
