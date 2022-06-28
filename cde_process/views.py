@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from .forms import NewProcessForm, AddCnnForm ,ManageAttributeForm
-from .models import NewProcess, AddCnn ,ManageAttribute
+from .models import NewProcess, AddCnnModel ,ManageAttribute
 from django.contrib.auth.models import User
 # Create your views here.
 
@@ -13,14 +13,14 @@ def index(request):
 
 def cnn_view(request, ):
     add_cnn = AddCnnForm()
-    table_values = AddCnn.objects.all()
+    table_values = AddCnnModel.objects.all()
     return render(request, "cnn.html", context={'form': add_cnn, 'data': table_values})
 
 
-def manage_attribute_view(request, ):
-    add_cnn = ManageAttributeForm()
+def manage_attribute_view(request):
+    manage_attribute = ManageAttributeForm()
     table_values = ManageAttribute.objects.all()
-    return render(request, "manage_attribute.html", context={'form': add_cnn, 'data': table_values})
+    return render(request, "manage_attribute.html", context={'manage_attribute': manage_attribute, 'data': table_values})
 
 
 def new_process(request):
@@ -42,7 +42,7 @@ def new_process(request):
 
     if request.POST.get('classification_model') == 'yes':
         add_cnn = AddCnnForm()
-        table_values = AddCnn.objects.all()
+        table_values = AddCnnModel.objects.all()
         return render(request, "cnn.html", context={'form': add_cnn, 'data': table_values})
 
         # return redirect(cnn_view,{'user':user})
@@ -61,6 +61,19 @@ def add_cnn(request):
         return redirect(manage_attribute_view)
     else:
         form = AddCnnForm()
+    return redirect(cnn_view)
+
+def add_manage_attribute(request):
+    form = ManageAttribute()
+    if request.method == "POST" and request.FILES['data_label']:
+        form = ManageAttributeForm(request.POST)
+        if form.is_valid():
+            my_model = form.save(commit=False)
+            my_model.sample_file = request.FILES['data_label']
+            my_model.save()
+        return redirect(manage_attribute_view)
+    else:
+        form = ManageAttributeForm()
     return redirect(cnn_view)
 
 

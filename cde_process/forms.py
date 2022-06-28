@@ -1,6 +1,6 @@
 from dataclasses import fields
 from django import forms
-from .models import NewProcess,AddCnn
+from .models import NewProcess,AddCnnModel,ManageAttribute
 
 
 # Create your forms here.
@@ -13,12 +13,12 @@ class NewProcessForm(forms.ModelForm):
 class AddCnnForm(forms.ModelForm):
 
     class Meta:
-        model = AddCnn
+        model = AddCnnModel
         exclude = ["sample_file"]
 
 class ManageAttributeForm(forms.ModelForm):
 
     class Meta:
-        model = AddCnn
+        model = ManageAttribute
         exclude = ["data_label"]
        

@@ -4,24 +4,24 @@ from django.contrib.auth.models import User
 from django.core.validators import FileExtensionValidator
 
 
-pipeline_select_options = (
+PIPELINE_SELECT_OPTIONS = (
     ('Engine-I', 'Engine-I'),
     ('Engine-II', 'Engine-II'),
 )
 
-classification_model_select_options = (
+CLASSIFICATION_MODEL_SELECT_OPTIONS = (
     ('yes', 'yes'),
     ('no', 'no'),
 )
 
-input_document_select_options = (
+INPUT_DOCUMENT_SELECT_OPTIONS = (
     ('JPG', 'JPG'),
     ('PDF', 'PDF'),
     ('JPEG', 'JPEG'),
     ('TIF', 'TIF'),
     ('PNG', 'PNG'),
 )
-time_zone_select_options = (
+TIME_ZONE_SELECT_OPTIONS = (
     ('UTC-12:00, International Date Line West',
      '(UTC-12:00) International Date Line West'),
     ('UTC-11:00, Coordinated Universal Time-11',
@@ -188,7 +188,7 @@ time_zone_select_options = (
     ('UTC+14:00, Kiritimati Island', '(UTC+14:00) Kiritimati Island'),
 )
 
-process_sla_select_options = (
+PROCESS_SLA_SELECT_OPTIONS = (
     ('0', '1 hours'),
     ('1', '2 hours'),
     ('2', '3 hours'),
@@ -215,7 +215,7 @@ process_sla_select_options = (
     ('23', '24 hours'),
 )
 
-pre_processing_select_options = (
+PRE_PROCESSING_SELECT_OPTIONS = (
     ('0', 'no'),
     ('1', 'yes'),
 )
@@ -225,27 +225,27 @@ pre_processing_select_options = (
 class NewProcess(models.Model):
     process_name = models.CharField(max_length=60)
     pipeline = models.CharField(
-        max_length=30, choices=pipeline_select_options, null=True, blank=True)
+        max_length=30, choices=PIPELINE_SELECT_OPTIONS, null=True, blank=True)
     classification_model = models.CharField(
-        max_length=30, choices=classification_model_select_options, null=True, blank=True)
+        max_length=30, choices=CLASSIFICATION_MODEL_SELECT_OPTIONS, null=True, blank=True)
     input_document = MultiSelectField(
-        choices=input_document_select_options, null=True, max_choices=5, blank=True)
+        choices=INPUT_DOCUMENT_SELECT_OPTIONS, null=True, max_choices=5, blank=True)
     time_zone = models.CharField(
-        max_length=60, choices=time_zone_select_options, null=True, blank=True)
+        max_length=60, choices=TIME_ZONE_SELECT_OPTIONS, null=True, blank=True)
     process_sla = models.CharField(
-        max_length=30, choices=process_sla_select_options, null=True, blank=True)
+        max_length=30, choices=PROCESS_SLA_SELECT_OPTIONS, null=True, blank=True)
     pre_processing = models.CharField(
-        max_length=30, choices=pre_processing_select_options, null=True, blank=True)
+        max_length=30, choices=PRE_PROCESSING_SELECT_OPTIONS, null=True, blank=True)
     # username = models.ForeignKey(
     #     User, to_field="username", on_delete=models.CASCADE,null=True)
 
 
-type_select_option = (
+TYPE_SELECT_OPTION = (
     ('regular model', 'Regular Model'),
     ('vgg16 model', 'Vgg16 Model'),
 )
 
-epochs_select_option = (
+EPOCHS_SELECT_OPTION = (
     ('20', '20'),
     ('30', '30'),
     ('40', '40'),
@@ -257,23 +257,23 @@ epochs_select_option = (
     ('100', '100'),
 )
 
-batch_select_option = (
+BATCH_SELECT_OPTION = (
     ('16', '16'),
     ('32', '32'),
     ('64', '64'),
 )
 
-kernal_select_option = (
+KERNAL_SELECT_OPTION = (
     ('he_normal', 'he_normal'),
     ('he_uniform', 'he_uniform'),
 )
 
-optimizer_select_option = (
+OPTIMIZER_SELECT_OPTION = (
     ('adam', 'adam'),
     ('sgd', 'sgd'),
     ('rmsprop', 'rmsprop'),
 )
-test_select_option = (
+TEST_SELECT_OPTION = (
     ('0.3', '0.3'),
     ('0.15', '0.15'),
     ('0.18', '0.18'),
@@ -282,38 +282,38 @@ test_select_option = (
     ('0.27', '0.27'),
 )
 
-activation_select_option = (
+ACTIVATION_SELECT_OPTION = (
     ('relu', 'relu'),
     ('leaky relu', 'leaky relu')
 )
 
 
-class AddCnn(models.Model):
-    type = models.CharField(max_length=30, choices=type_select_option)
+class AddCnnModel(models.Model):
+    type = models.CharField(max_length=30, choices=TYPE_SELECT_OPTION)
     name = models.CharField(max_length=30,)
     confidence_threshold = models.IntegerField(max_length=30,)
     sample_file = models.FileField(
         upload_to="media/", blank=True, validators=[FileExtensionValidator(['.zip', ])])
-    epochs = models.CharField(max_length=30, choices=epochs_select_option)
-    batch_size = models.CharField(max_length=30, choices=batch_select_option)
+    epochs = models.CharField(max_length=30, choices=EPOCHS_SELECT_OPTION)
+    batch_size = models.CharField(max_length=30, choices=BATCH_SELECT_OPTION)
     kernal_initializer = models.CharField(
-        max_length=30, choices=kernal_select_option)
+        max_length=30, choices=KERNAL_SELECT_OPTION)
     optimizer = models.CharField(
-        max_length=30, choices=optimizer_select_option)
-    test_size = models.CharField(max_length=30, choices=test_select_option)
+        max_length=30, choices=OPTIMIZER_SELECT_OPTION)
+    test_size = models.CharField(max_length=30, choices=TEST_SELECT_OPTION)
     activation = models.CharField(
-        max_length=30, choices=activation_select_option)
+        max_length=30, choices=ACTIVATION_SELECT_OPTION)
 
 
-attribute_type_select_option = (
+ATTRIBUTE_TYPE_SELECT_OPTION = (
     ('key_item', 'key_item'),
     ('line_item', 'line_item'),
 )
-is_derived_select_option = (
+IS_DERIVED_SELECT_OPTION = (
     ('no', 'no'),
     ('yes', 'yes'),
 )
-zone_select_option = (
+ZONE_SELECT_OPTION = (
     ('unknown', 'Unknown'),
     ('top', 'top'),
     ('top_right', 'top_right'),
@@ -324,19 +324,19 @@ zone_select_option = (
     ('page', 'page'),
 )
 
-required_in_qc_select_option = (
+REQUIRED_IN_QC_SELECT_OPTION = (
     ('no', 'no'),
     ('yes', 'yes'),
 )
-required_in_output_select_option = (
+REQUIRED_IN_OUTPUT_SELECT_OPTION = (
     ('no', 'no'),
     ('yes', 'yes'),
 )
-mandate_select_option = (
+MANDATE_SELECT_OPTION = (
     ('no', 'no'),
     ('yes', 'yes'),
 )
-value_type_select_option = (
+VALUE_TYPE_SELECT_OPTION = (
     ('string', 'string'),
 )
 
@@ -344,20 +344,20 @@ value_type_select_option = (
 class ManageAttribute(models.Model):
     attribute_name = models.CharField(max_length=30)
     attribute_type = models.CharField(
-        max_length=30, choices=attribute_type_select_option)
+        max_length=30, choices=ATTRIBUTE_TYPE_SELECT_OPTION)
     attribute_cs = models.CharField(max_length=30)
     is_derived = models.CharField(
-        max_length=30, choices=is_derived_select_option)
-    min_lenght = models.IntegerField()
-    max_lenght = models.IntegerField()
-    Zone = models.CharField(max_length=30, choices=zone_select_option)
+        max_length=30, choices=IS_DERIVED_SELECT_OPTION)
+    min_length = models.IntegerField()
+    max_length = models.IntegerField()
+    Zone = models.CharField(max_length=30, choices=ZONE_SELECT_OPTION)
     default_value = models.CharField(max_length=30)
     required_in_qc = models.CharField(
-        max_length=30, choices=required_in_qc_select_option)
+        max_length=30, choices=REQUIRED_IN_QC_SELECT_OPTION)
     required_in_output = models.CharField(
-        max_length=30, choices=required_in_output_select_option)
+        max_length=30, choices=REQUIRED_IN_OUTPUT_SELECT_OPTION)
     mandate = models.CharField(
-        max_length=30, choices=mandate_select_option)
+        max_length=30, choices=MANDATE_SELECT_OPTION)
     data_label = models.FileField(upload_to='media/data_label')
     value_type = models.CharField(
-        max_length=30, choices=value_type_select_option)
+        max_length=30, choices=VALUE_TYPE_SELECT_OPTION)
