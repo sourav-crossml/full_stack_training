@@ -17,7 +17,7 @@ def cnn_view(request, ):
     return render(request, "cnn.html", context={'form': add_cnn, 'data': table_values})
 
 
-def mamange_attribute_view(request, ):
+def manage_attribute_view(request, ):
     add_cnn = ManageAttributeForm()
     table_values = ManageAttribute.objects.all()
     return render(request, "manage_attribute.html", context={'form': add_cnn, 'data': table_values})
@@ -58,6 +58,7 @@ def add_cnn(request):
             my_model = form.save(commit=False)
             my_model.sample_file = request.FILES['sample_file']
             my_model.save()
+        return redirect(manage_attribute_view)
     else:
         form = AddCnnForm()
     return redirect(cnn_view)
