@@ -6,8 +6,12 @@ from .serializers import *
 # Create your views here.
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
+
 class Registeruser(APIView):
-    def post(self, request):
+    """
+    wsad
+    """
+    def post(self,request):
         serializer = UserSerializer(data=request.data)
 
         if not serializer.is_valid():

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "http://127.0.0.1:8000/store/category/",
+                dataType: "json",
+                success: function (data) {
+                    for(var i=0;i<data.length;i++){
+                        var row=$('<tr>')
+                    }
+                    $('name').text(data[0].name);
+
+                }
+            });
+        });
+
+
+
+
+        $("document").ready(function () {
+            var form = $("#name").serialize();
+            console.log(form)
+            $.ajax({
+                type: "GET",
+                url: "http://127.0.0.1:8000/store/category/",                    ///// URL must be specified
+                success: function (response) {
+                    alert(JSON.stringify(response));
+                },
+                error: function (ex) {
+                    alert(ex.responseText);
+                }
+            });
+            return false;
+        });
+    </script>
+</head>
+
+<body>
+    <div id="jsonresp" style="margin-top: 100px">
+        <p><label> First name :</label> <span id="name"></span></p>
+
+    </div>
+
+
+</body>
+
+</html>
