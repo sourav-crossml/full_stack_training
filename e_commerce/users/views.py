@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from .serializers import *
 # Create your views here.
-
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 class Registeruser(APIView):
     def post(self, request):
