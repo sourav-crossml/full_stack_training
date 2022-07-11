@@ -19,18 +19,23 @@
                 console.log(form)
                 $.ajax({
                     type: "GET",
-                    url: "http://127.0.0.1:8000/store/category/",
+                    url: "http://127.0.0.1:8000/store/product/",
                     success: function (response) {
                         obj = response
                         debugger
                         console.log(obj, 'response');
-                        var dynamic = document.querySelector('.jsonresp');
+                        var dynamic = document.querySelector('.card');
                         for (let i = 0; i < response.category.length; i++) {
-                            var fetch = document.querySelector('.jsonresp').innerHTML;
+                            var fetch = document.querySelector('.card').innerHTML;
 
-                            dynamic.innerHTML = `  <div class="jsonresp" style="margin-top: 100px">
-                                <p><label> First name :</label> <span id="name"> ${i}</span></p>
-                            </div>` + fetch;
+                            dynamic.innerHTML = `      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>` + fetch;
 
                         }
 
@@ -47,11 +52,15 @@
 </head>
 
 <body>
-    <div class="jsonresp" style="margin-top: 100px">
-        <p><label> First name :</label> <span id="name"> </span></p>
-
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
     </div>
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
