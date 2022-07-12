@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -12,6 +13,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+            .card-img-top{
+                height: 400px;
+            }
+        </style>
     <script>
         $(document).ready(function () {
             $("document").ready(function () {
@@ -21,21 +27,21 @@
                     type: "GET",
                     url: "http://127.0.0.1:8000/store/product/",
                     success: function (response) {
-                        obj = response
-                        debugger
-                        console.log(obj, 'response');
-                        var dynamic = document.querySelector('.card');
+                        obj = console.log(response.category)
+                        // console.log(obj, 'response');
+                        var dynamic = document.querySelector('.row');
                         for (let i = 0; i < response.category.length; i++) {
-                            var fetch = document.querySelector('.card').innerHTML;
-
-                            dynamic.innerHTML = `      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>` + fetch;
+                            var fetch = document.querySelector('.row').innerHTML;
+                            dynamic.innerHTML = `
+                            <div class="card col-3 m-5" style="width: 18rem;">
+                            <img src="`+ response.category[i].image + `" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">`+ response.category[i].name + ` </h5>
+                              <p class="card-text">`+ response.category[i].description + `</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                           
+                          </div>` + fetch;
 
                         }
 
@@ -52,13 +58,9 @@
 </head>
 
 <body>
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="container  ">
+        <div class="row">
+           
         </div>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->

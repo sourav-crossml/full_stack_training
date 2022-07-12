@@ -12,13 +12,8 @@ class CategoryView(APIView):
 
     def get(self, request):
         user_count = Category.objects.all()
-        serializer = CategorySerializer(user_count,many=True)
-
-        # content = {'category': }
+        serializer = CategorySerializer(user_count, many=True)
         return Response({'category': serializer.data})
-
-
-        # return Response(content)
 
     def post(self, request):
         serializer = CategorySerializer(data=request.data)
@@ -31,10 +26,11 @@ class CategoryView(APIView):
 class ProductView(APIView):
     def get(self, request):
         user_count = Product.objects.all()
-        serializer = ProductSerializer(user_count,many=True)
+        serializer = ProductSerializer(user_count, many=True)
 
         # content = {'category': }
         return Response({'category': serializer.data})
+
 
 def index(request):
     return render(request, 'product.html')
