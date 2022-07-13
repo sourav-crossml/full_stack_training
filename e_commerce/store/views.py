@@ -27,10 +27,8 @@ class ProductView(APIView):
     def get(self, request):
         user_count = Product.objects.all()
         serializer = ProductSerializer(user_count, many=True)
-
-        # content = {'category': }
         return Response({'category': serializer.data})
 
 
 def index(request):
-    return render(request, 'product.html')
+    return render(request, 'login.html')

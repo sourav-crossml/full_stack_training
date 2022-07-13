@@ -26,7 +26,7 @@ SECRET_KEY = '=!kkh@g$t3@7b%+3r7-(hha78s(*q=t@l*c7*k$7243!s^6t05'
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CORS_ORIGIN_ALLOW_ALL= True
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
@@ -107,6 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
+        # 'rest_framework.permissions.AllowAny',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
@@ -131,4 +132,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
-MEDIA_URL = '/' 
+MEDIA_URL = '/'
