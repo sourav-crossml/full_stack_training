@@ -31,4 +31,7 @@ class ProductView(APIView):
 
 
 def index(request):
+    return render(request, 'signup.html')
+
+def login_page(request):
     return render(request, 'login.html')
