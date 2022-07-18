@@ -26,7 +26,8 @@ class Registeruser(APIView):
         serializer = UserSerializer(data=request.data)
         if not serializer.is_valid():
             return Response({'status': 403, 'errors': serializer.errors, 'message': 'something went wrong'})
-
+        if request.POST['password']!= request.POST['password2']:
+            return Response({'status': 403, 'errors': serializer.errors, 'message': 'password not matched'})
         serializer.save()
 
         user = User.objects.get(username=serializer.data['username'])
@@ -44,14 +45,13 @@ def login_user(request):
     print(password)
     user = authenticate(request, username=username, password=password)
     if user is not None:
-        login(request, user)
-        return Response({'status': 200, })
+        if user.is_active:
+            login(request, user)
+            return Response({'status': 200, })
         # Redirect to a success page.
-        ...
     else:
         return Response({'status': 404, })
         # Return an 'invalid login' error message.
-        ...
 
 # def login_user(request):
 

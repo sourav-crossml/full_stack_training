@@ -11,8 +11,8 @@ from rest_framework.response import Response
 class CategoryView(APIView):
 
     def get(self, request):
-        user_count = Category.objects.all()
-        serializer = CategorySerializer(user_count, many=True)
+        category_obj = Category.objects.all()
+        serializer = CategorySerializer(category_obj, many=True)
         return Response({'category': serializer.data})
 
     def post(self, request):
@@ -25,8 +25,8 @@ class CategoryView(APIView):
 
 class ProductView(APIView):
     def get(self, request):
-        user_count = Product.objects.all()
-        serializer = ProductSerializer(user_count, many=True)
+        product_obj = Product.objects.all()
+        serializer = ProductSerializer(product_obj, many=True)
         return Response({'category': serializer.data})
 
 
@@ -43,6 +43,8 @@ def signup_page(request):
 
 
 def filter_product(request):
-    obj = Product.objects.filter(category='category').values
+    # if request.POST[]
+    obj = Product.objects.filter(category='Dress').values
+    
     serializer = ProductSerializer(obj, many=True)
     return Response({'category': serializer.data})

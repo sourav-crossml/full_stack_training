@@ -12,8 +12,8 @@ class Category(models.Model):
     def get_all_categories():
         return Category.objects.all()
 
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self.name
 
 
 class Product(models.Model):
