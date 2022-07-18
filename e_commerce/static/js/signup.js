@@ -8,13 +8,13 @@ $(".submit").click(function (e) {
     console.log(JSON.parse(form))
     $.ajax({
         type: "POST",
-        url: "/register",                    ///// URL must be specified  
+        url: "user/register",                    ///// URL must be specified  
         data: JSON.parse(form),
         dataType: 'json',
         success: function (response) {
             alert(JSON.stringify(response));
             if (response.status == 200) {
-                window.location.href = "/store/login_page "
+                window.location.href = "/login_page "
             }
 
         },
